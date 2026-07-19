@@ -1,23 +1,62 @@
 # SlavH Repos
 
-Automatically generated production-ready projects showcasing diverse skills across TypeScript and Python.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-## Published Projects
+A collection of production-ready, auto-generated projects showcasing diverse skills across **TypeScript/Next.js** and **Python**. Each project has real working code, tests, documentation, and is published as a standalone GitHub repository.
 
-| # | Project | Stack | Kind | Description | Repo |
-|---|---------|-------|------|-------------|------|
-| 0 | ubl-peppol-invoice-validator | TypeScript | CLI + Web | UBL 2.1 / Peppol e-invoice converter & validator with multi-LLM error explanations | [repo](https://github.com/SlavH/ubl-peppol-invoice-validator) |
-| 1 | csv-to-jsonl | TypeScript | CLI | Convert CSV files to JSONL format with smart type inference | [repo](https://github.com/SlavH/csv-to-jsonl) |
-| 2 | markdown-notes | TypeScript | Web | Next.js app to browse, search, and render Markdown files as HTML | [repo](https://github.com/SlavH/markdown-notes) |
-| 3 | status-page | TypeScript | API | HTTP health-check server monitoring endpoints | [repo](https://github.com/SlavH/status-page) |
-| 4 | tiny-validator | TypeScript | Lib | Lightweight schema validation library, zero deps | [repo](https://github.com/SlavH/tiny-validator) |
-| 5 | env-diff | TypeScript | CLI | Compare .env files across environments | [repo](https://github.com/SlavH/env-diff) |
-| 6 | log-analyzer | Python | CLI | Parse and analyze log files for errors and patterns | [repo](https://github.com/SlavH/log-analyzer) |
-| 7 | qr-api | Python | API | Self-hosted QR code generation API | [repo](https://github.com/SlavH/qr-api) |
-| 8 | csv-dedupe | Python | Data | Deduplicate CSV files with fuzzy matching | [repo](https://github.com/SlavH/csv-dedupe) |
-| 9 | pyretry | Python | Lib | Retry decorator with exponential backoff | [repo](https://github.com/SlavH/pyretry) |
-| 10 | text-cluster | Python | Data | TF-IDF + K-means text clustering (stdlib only) | [repo](https://github.com/SlavH/text-cluster) |
+**Total: 11 projects** — 5 TypeScript, 5 Python, 1 full-stack (TS + Next.js)
+
+---
+
+## Project Catalog
+
+### TypeScript
+
+| # | Project | Kind | Description | Stack |
+|---|---------|------|-------------|-------|
+| 0 | [ubl-peppol-invoice-validator](https://github.com/SlavH/ubl-peppol-invoice-validator) | CLI + Web | UBL 2.1 / Peppol e-invoice converter & validator with multi-LLM AI error explanations. Parses CSV/XML, validates against 11 Peppol BIS rules, generates UBL XML output. CLI via Commander, API via Next.js route handler. | Next.js 14, React 18, Commander, fast-xml-parser |
+| 1 | [csv-to-jsonl](https://github.com/SlavH/csv-to-jsonl) | CLI | Convert CSV files to JSONL (newline-delimited JSON) with automatic type inference. Streams large files line-by-line. | TypeScript, Commander, Vitest |
+| 2 | [markdown-notes](https://github.com/SlavH/markdown-notes) | Web | Next.js app to browse, search, and render local Markdown files as HTML. GitHub-flavored Markdown with full-text search. | Next.js 14, React 18, TypeScript |
+| 3 | [status-page](https://github.com/SlavH/status-page) | API | Zero-dependency HTTP health-check server that monitors endpoints and returns JSON status with response times. Configurable via `PORT` env. | TypeScript, Node HTTP |
+| 4 | [tiny-validator](https://github.com/SlavH/tiny-validator) | Lib | Ultra-lightweight schema validation library with fluent API. Zero dependencies, TypeScript-first with full type inference. String, number, boolean, array, object validators. | TypeScript, Vitest |
+| 5 | [env-diff](https://github.com/SlavH/env-diff) | CLI | Compare `.env` files across environments (dev/staging/prod). Flags missing keys, extra keys, and value changes. Exits with code 1 on mismatch for CI pipelines. | TypeScript, Commander, Vitest |
+
+### Python
+
+| # | Project | Kind | Description | Stack |
+|---|---------|------|-------------|-------|
+| 6 | [log-analyzer](https://github.com/SlavH/log-analyzer) | CLI | Parse and analyze log files — count severity levels, find top IPs/endpoints, detect error bursts within configurable time windows. | Python 3.14, argparse, pytest |
+| 7 | [qr-api](https://github.com/SlavH/qr-api) | API | Self-hosted HTTP API for QR code generation. POST text or URL → receive a PNG QR code. Configurable size and error correction level. | Python 3.14, stdlib http.server |
+| 8 | [csv-dedupe](https://github.com/SlavH/csv-dedupe) | Data | Deduplicate CSV files using exact or fuzzy (Levenshtein) matching on specified columns. Outputs a deduplicated file plus a report of removed duplicates. | Python 3.14, csv (stdlib), pytest |
+| 9 | [pyretry](https://github.com/SlavH/pyretry) | Lib | Decorator-based retry utility with exponential backoff, jitter, and custom exception predicates. Use `@retry` on any async or sync function. | Python 3.14, pytest |
+| 10 | [text-cluster](https://github.com/SlavH/text-cluster) | Data | Cluster text documents using TF-IDF vectorization + K-means (stdlib-only, zero ML dependencies). Finds most-representative terms per cluster. | Python 3.14, csv/json (stdlib), pytest |
+
+---
 
 ## Generator
 
-The `tooling/generator/` directory contains the project scaffold + publish engine used to create these repos.
+The `tooling/generator/` directory contains the project scaffold + publish engine used to create these repos. It:
+
+- Reads a `projects.json` manifest with name, stack, kind, description, and features
+- Scaffolds from per-stack/per-kind templates (TypeScript: cli/web/api/lib; Python: cli/api/lib/data)
+- Installs dependencies, runs tests
+- Writes README, LICENSE, .gitignore
+- Creates a public GitHub repo and pushes via `gh`
+
+To regenerate or add new projects:
+
+```bash
+cd tooling/generator
+npm install
+npx tsx src/index.ts
+```
+
+---
+
+## License
+
+All projects are MIT licensed. See individual project repositories for details.
+
+---
+
+*Generated by [SlavH-repos](https://github.com/SlavH/SlavH-repos) generator tool.*
