@@ -1,0 +1,17 @@
+{
+  "name": "slavh-repos-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Generate production-ready projects with varied stacks and publish to GitHub",
+  "scripts": {
+    "generate": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

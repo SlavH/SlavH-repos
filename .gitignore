@@ -1,0 +1,18 @@
+# Ignore generated project dirs (each has its own repo)
+/csv-to-jsonl/
+/markdown-notes/
+/status-page/
+/tiny-validator/
+/env-diff/
+/log-analyzer/
+/qr-api/
+/csv-dedupe/
+/pyretry/
+/text-cluster/
+/ubl-peppol-invoice-validator/
+
+# Generated project artifacts
+node_modules/
+__pycache__/
+*.pyc
+dist/

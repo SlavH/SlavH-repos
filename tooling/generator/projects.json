@@ -1,0 +1,84 @@
+{
+  "projects": [
+    {
+      "name": "csv-to-jsonl",
+      "stack": "typescript",
+      "kind": "cli",
+      "description": "Convert CSV files to JSONL (newline-delimited JSON) with smart type inference",
+      "features": ["Auto-detect column types (number, string, boolean)", "Stream large files line by line", "Output to stdout or file"],
+      "purpose": "A dev utility for data engineers who need to convert CSV to JSONL for ETL pipelines"
+    },
+    {
+      "name": "markdown-notes",
+      "stack": "typescript",
+      "kind": "web",
+      "description": "Minimal Next.js app to browse, search, and render local Markdown files as HTML",
+      "features": ["Reads .md files from a local directory", "Full-text search", "GitHub-flavored Markdown rendering"],
+      "purpose": "A lightweight documentation browser for personal notes or project wikis"
+    },
+    {
+      "name": "status-page",
+      "stack": "typescript",
+      "kind": "api",
+      "description": "HTTP health-check API server that monitors endpoints and returns their status",
+      "features": ["Check multiple URLs on demand", "Return JSON with status codes and response times", "Configurable via env or config file"],
+      "purpose": "A self-hosted uptime monitor for small projects and services"
+    },
+    {
+      "name": "tiny-validator",
+      "stack": "typescript",
+      "kind": "lib",
+      "description": "Lightweight schema validation library with fluent API, zero dependencies",
+      "features": ["String, number, boolean, array, object validators", "Custom error messages", "TypeScript-first with full type inference"],
+      "purpose": "A small, focused validation library for when Joi/Zod is too heavy"
+    },
+    {
+      "name": "env-diff",
+      "stack": "typescript",
+      "kind": "cli",
+      "description": "Compare .env files across environments (dev/staging/prod) and report missing or extra keys",
+      "features": ["Diff two or more .env files", "Flag missing keys, extra keys, and value changes", "Exit with code 1 on mismatch for CI pipelines"],
+      "purpose": "A DevOps utility to catch environment drift between deployments"
+    },
+    {
+      "name": "log-analyzer",
+      "stack": "python",
+      "kind": "cli",
+      "description": "Parse and analyze log files: count levels, find top IPs, detect error bursts",
+      "features": ["Common log format and JSON log support", "Error level aggregation", "Top-N IP/endpoint reporting", "Error burst detection by time window"],
+      "purpose": "Quick on-the-box log triage without a full observability stack"
+    },
+    {
+      "name": "qr-api",
+      "stack": "python",
+      "kind": "api",
+      "description": "Lightweight HTTP API server that generates QR codes from text payloads",
+      "features": ["POST text/URL → returns PNG QR code", "Configurable size and correction level", "No external services required"],
+      "purpose": "Self-hosted QR code service for internal tools and integrations"
+    },
+    {
+      "name": "csv-dedupe",
+      "stack": "python",
+      "kind": "data",
+      "description": "Deduplicate CSV files using fuzzy matching on specified columns",
+      "features": ["Exact and fuzzy (Levenshtein) dedup", "Specify key columns", "Report: duplicates removed and kept"],
+      "purpose": "Clean up messy CSV exports before importing into a database"
+    },
+    {
+      "name": "pyretry",
+      "stack": "python",
+      "kind": "lib",
+      "description": "Decorator-based retry utility with exponential backoff, jitter, and custom predicates",
+      "features": ["@retry decorator with configurable tries", "Exponential backoff + jitter", "Retry on specific exception types"],
+      "purpose": "A reusable Python library for making any function resilient to transient failures"
+    },
+    {
+      "name": "text-cluster",
+      "stack": "python",
+      "kind": "data",
+      "description": "Cluster text documents using TF-IDF + K-means (stdlib-only, zero ML deps)",
+      "features": ["TF-IDF vectorization from scratch", "K-means clustering with configurable K", "Most-representative terms per cluster"],
+      "purpose": "Educational text clustering tool to group documents by topic without external ML libraries"
+    }
+  ]
+}
